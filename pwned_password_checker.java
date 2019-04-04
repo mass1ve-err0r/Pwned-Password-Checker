@@ -18,6 +18,7 @@ class pwned_password_checker {
         System.out.println("PwnedPassword Checker / <mass1ve_err0r>");        
         char parr[] = console.readPassword("Enter your password: ");    // password entry is hidden!
         String inputstring = new String(parr);
+        parr = null;
         int pw_length = inputstring.length();
         System.out.println("Password length:    " + pw_length);
         return inputstring;
@@ -64,8 +65,8 @@ class pwned_password_checker {
             int index = receivedhashlist.indexOf(sha1cut);
             String occurance_count = receivedhashlist_full.get(index);
             System.out.println("Result: Password Found on Server !");
-            System.out.println("!-- Please change your password --!");
             System.out.println("Occurance:  " + occurance_count);
+            System.out.println("!-- Please change your password --!");
         } else {
             System.out.println("Result: Password was NOT found on the Server.");
         }
